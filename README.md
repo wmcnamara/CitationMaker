@@ -1,5 +1,5 @@
 # CitationMaker
-Creates simple, ad free citations with the command line. Created because citation maker websites that flood you with ads are extremely annoying.
+Creates simple, ad free citations with the command line. Created out of an annoyance for citation maker websites that flood you with advertisements. 
 
 # How To Use
 CitationMaker is a command line program, so it is recommended you add the program to the PATH environment variable.
