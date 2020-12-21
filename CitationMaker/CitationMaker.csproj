@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>cite</AssemblyName>
+    <Authors>Weston McNamara</Authors>
+    <Company>WestMac</Company>
+    <Product>CitationMaker</Product>
+    <Description>Easily create citations with a few commands.</Description>
+  </PropertyGroup>
+
+</Project>
