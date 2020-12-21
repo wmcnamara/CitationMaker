@@ -8,6 +8,7 @@
     <Company>WestMac</Company>
     <Product>CitationMaker</Product>
     <Description>Easily create citations with a few commands.</Description>
+    <RepositoryUrl>https://github.com/wmcnamara/CitationMaker</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
-
 </Project>

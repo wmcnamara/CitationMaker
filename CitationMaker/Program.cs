@@ -6,11 +6,16 @@ namespace CitationMaker
     {
         static void Main(string[] args)
         {
-            if (args == null)
+            if (args.Length == 0)
             {
-                Console.WriteLine("Created by Weston McNamara");
+                Console.WriteLine("Created by Weston McNamara \n");
                 Console.WriteLine("To use, pass the format you would like as a command line argument.");
+                Console.WriteLine("Supported formats: APA");
+                Console.WriteLine("Example: \"cite apa\" for apa citation.");
+
+                return;
             }
+
             switch (args[0].ToLower())
             {                    
                 //Author’s Last name, First initial. Middle initial. (Year published). Title of source. URL. < APA format
@@ -73,7 +78,7 @@ namespace CitationMaker
                     Console.WriteLine("Enter text: ");
                     input = Console.ReadLine();
                 }
-                catch (Exception E)
+                catch (Exception)
                 {
                     Console.WriteLine("Please enter in the corrent format.");
                     continue;
