@@ -6,7 +6,8 @@ namespace CitationMaker
     {
         static void Main(string[] args)
         {
-            if (args.Length == 0)
+            //Help
+            if (args.Length == 0 || args[0].ToLower() == "help")
             {
                 Console.WriteLine("Created by Weston McNamara \n");
                 Console.WriteLine("To use, pass the format you would like as a command line argument.");
@@ -17,12 +18,14 @@ namespace CitationMaker
                 return;
             }
 
+            //Respond to the arguments
             switch (args[0].ToLower())
             {                    
                 //Author’s Last name, First initial. (Year published). Title of source. URL. < APA format
                 case "apa":
                     Citation apaCiteData = new Citation();
 
+                    //Create the citation text
                     string apaCitation = string.Empty;
                     apaCitation = $"{apaCiteData.lastName}, {apaCiteData.firstIntial}. ({apaCiteData.year}, {apaCiteData.month}, {apaCiteData.day}). {apaCiteData.title}. \n{apaCiteData.URL}.";
 
@@ -33,21 +36,21 @@ namespace CitationMaker
                 case "mla":
                     Citation mlaCiteData = new Citation();
 
+                    //Create the citation text
                     string mlaCitation = string.Empty;
                     mlaCitation = $"{mlaCiteData.lastName}, {mlaCiteData.firstIntial}. \"{mlaCiteData.title}.\" {mlaCiteData.year}, {mlaCiteData.month}, {mlaCiteData.day}. \n{mlaCiteData.URL}.";
 
                     Console.WriteLine(mlaCitation);
                     break;
 
+                //Incorrect arguments
                 default:
                     Console.WriteLine("Please use the correct format for command line arguments. Example:");
                     Console.WriteLine("\"cite apa\" for an APA citation");
                     Console.WriteLine("\"cite mla\" for an MLA citation");
                     break;
             }
-        }
-
-        
+        }   
     }
 
     class Citation
@@ -77,6 +80,7 @@ namespace CitationMaker
             day = GetSanitizedUserInput();
         }
 
+        //Gets an input string, and will requery the user if an exception is thrown to prevent crashing.
         static string GetSanitizedUserInput()
         {
             string input = null;
