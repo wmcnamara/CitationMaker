@@ -10,26 +10,39 @@ namespace CitationMaker
             {
                 Console.WriteLine("Created by Weston McNamara \n");
                 Console.WriteLine("To use, pass the format you would like as a command line argument.");
-                Console.WriteLine("Supported formats: APA");
+                Console.WriteLine("Supported formats: APA & MLA");
                 Console.WriteLine("Example: \"cite apa\" for apa citation.");
+                Console.WriteLine("Example: \"cite mla\" for mla citation.");
 
                 return;
             }
 
             switch (args[0].ToLower())
             {                    
-                //Author’s Last name, First initial. Middle initial. (Year published). Title of source. URL. < APA format
+                //Author’s Last name, First initial. (Year published). Title of source. URL. < APA format
                 case "apa":
-                    Citation citation = new Citation();
+                    Citation apaCiteData = new Citation();
 
                     string apaCitation = string.Empty;
-                    apaCitation = $"{citation.lastName}, {citation.firstIntial}. {citation.middleInitial}. ({citation.year}, {citation.month}, {citation.day}). {citation.title}. \n{citation.URL}.";
+                    apaCitation = $"{apaCiteData.lastName}, {apaCiteData.firstIntial}. ({apaCiteData.year}, {apaCiteData.month}, {apaCiteData.day}). {apaCiteData.title}. \n{apaCiteData.URL}.";
 
                     Console.WriteLine(apaCitation);             
                     break;
-                
-                case "mla":
 
+                //Author's Last name, First name. "Title of Source." publication date, location.
+                case "mla":
+                    Citation mlaCiteData = new Citation();
+
+                    string mlaCitation = string.Empty;
+                    mlaCitation = $"{mlaCiteData.lastName}, {mlaCiteData.firstIntial}. \"{mlaCiteData.title}.\" {mlaCiteData.year}, {mlaCiteData.month}, {mlaCiteData.day}. \n{mlaCiteData.URL}.";
+
+                    Console.WriteLine(mlaCitation);
+                    break;
+
+                default:
+                    Console.WriteLine("Please use the correct format for command line arguments. Example:");
+                    Console.WriteLine("\"cite apa\" for an APA citation");
+                    Console.WriteLine("\"cite mla\" for an MLA citation");
                     break;
             }
         }
@@ -47,9 +60,6 @@ namespace CitationMaker
 
             Console.WriteLine("Please enter the last name of the author of the document you're citing");
             lastName = GetSanitizedUserInput();
-
-            Console.WriteLine("Please enter the middle initial of the author of the document you're citing");
-            middleInitial = GetSanitizedUserInput();
 
             Console.WriteLine("Please enter the first initial of the author of the document you're citing");
             firstIntial = GetSanitizedUserInput();
@@ -90,7 +100,6 @@ namespace CitationMaker
 
         public string title;
         public string lastName;
-        public string middleInitial;
         public string firstIntial;
         public string URL;
         public string year;
