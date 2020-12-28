@@ -32,7 +32,7 @@ namespace CitationMaker
                     Console.WriteLine(apaCitation);             
                     break;
 
-                //Author's Last name, First name. "Title of Source." publication date, location.
+                //Author's Last name, First name. "Title of Source." publication date, location. < MLA format
                 case "mla":
                     Citation mlaCiteData = new Citation();
 
