@@ -9,6 +9,6 @@ To use CitationMaker, simply use the format you need a citation for as a command
 `cite apa` < Creates an APA citation
 `cite mla< Creates an MLA citation
 
-###Supports:
+### Supports:
 - APA Format
 - MLA Format
